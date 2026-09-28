@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsandler <bsandler@student.42vienna.c>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/28 14:43:07 by bsandler          #+#    #+#             */
-/*   Updated: 2026/09/28 14:43:39 by bsandler         ###   ########.fr       */
+/*   Created: 2026/09/28 16:11:36 by bsandler          #+#    #+#             */
+/*   Updated: 2026/09/28 16:14:16 by bsandler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isascii(int c)
+int	ft_toupper(int c)
 {
-	unsigned char	d;
-
-	d = (unsigned char) c;
-	if (d >= 0 && d <= 127)
-		return (1);
-	return (0);
+	if (c >= 'a' && c <= 'z')
+		c = c - 32;
+	return (c);
 }

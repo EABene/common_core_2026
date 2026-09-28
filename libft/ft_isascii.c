@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsandler <bsandler@student.42vienna.c>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/09/28 14:40:33 by bsandler          #+#    #+#             */
-/*   Updated: 2026/09/28 15:13:24 by bsandler         ###   ########.fr       */
+/*   Created: 2026/09/28 14:43:07 by bsandler          #+#    #+#             */
+/*   Updated: 2026/09/28 14:43:39 by bsandler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalnum(int c)
+#include "libft.h"
+
+int	ft_isascii(int c)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')
-		|| (c >= '0' && c <= '9'))
+	unsigned char	d;
+
+	d = (unsigned char) c;
+	if (d >= 0 && d <= 127)
 		return (1);
 	return (0);
 }
