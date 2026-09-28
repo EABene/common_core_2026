@@ -6,7 +6,7 @@
 /*   By: bsandler <bsandler@student.42vienna.c>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 15:56:37 by bsandler          #+#    #+#             */
-/*   Updated: 2026/09/28 16:04:21 by bsandler         ###   ########.fr       */
+/*   Updated: 2026/09/28 16:16:38 by bsandler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+/* --- CHARS --- */
 int	ft_isalpha(int c);
 int	ft_isdigit(int c);
 int	ft_isalnum(int c);
