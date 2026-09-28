@@ -6,7 +6,7 @@
 /*   By: bsandler <bsandler@student.42vienna.c>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 15:56:37 by bsandler          #+#    #+#             */
-/*   Updated: 2026/09/28 16:16:38 by bsandler         ###   ########.fr       */
+/*   Updated: 2026/09/28 17:48:24 by bsandler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,8 @@ int	ft_isascii(int c);
 int	ft_isprint(int c);
 int	ft_toupper(int c);
 int	ft_tolower(int c);
+
+/* --- STRINGS --- */
+
 
 #endif
