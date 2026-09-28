@@ -6,12 +6,13 @@
 /*   By: bsandler <bsandler@student.42vienna.c>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 14:44:20 by bsandler          #+#    #+#             */
-/*   Updated: 2026/09/28 14:44:50 by bsandler         ###   ########.fr       */
+/*   Updated: 2026/09/28 15:03:37 by bsandler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isprint(int c)
 {
-
+	if (c >= 32 && c <= 126)
+		return (1);
+	return (0);
 }
-

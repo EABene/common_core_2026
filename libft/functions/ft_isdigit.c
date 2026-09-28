@@ -6,13 +6,13 @@
 /*   By: bsandler <bsandler@student.42vienna.c>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 14:28:46 by bsandler          #+#    #+#             */
-/*   Updated: 2026/09/28 14:44:04 by bsandler         ###   ########.fr       */
+/*   Updated: 2026/09/28 15:02:31 by bsandler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isdigit.c(int c)
+int	ft_isdigit(int c)
 {
-	if (c >= '1' && c >= '9')
+	if (c >= '0' && c <= '9')
 		return (1);
 	return (0);
 }
