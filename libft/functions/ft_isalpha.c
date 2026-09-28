@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsandler <bsandler@42vienna.student.co>    +#+  +:+       +#+        */
+/*   By: bsandler <bsandler@student.42vienna.c>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 12:39:25 by bsandler          #+#    #+#             */
-/*   Updated: 2026/09/28 14:27:26 by bsandler         ###   ########.fr       */
+/*   Updated: 2026/09/28 14:42:52 by bsandler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_isalpha(int c)
 {
-//	(unsigned char) c;
+	(unsigned char) c;
 	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);
 	return (0);

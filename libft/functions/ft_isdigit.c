@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsandler <bsandler@42vienna.student.co>    +#+  +:+       +#+        */
+/*   By: bsandler <bsandler@student.42vienna.c>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 14:28:46 by bsandler          #+#    #+#             */
-/*   Updated: 2026/09/28 14:30:40 by bsandler         ###   ########.fr       */
+/*   Updated: 2026/09/28 14:44:04 by bsandler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
