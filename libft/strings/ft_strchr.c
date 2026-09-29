@@ -14,21 +14,20 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	int	i;
+	char	*ptr;
+	char	d;
+	size_t	i;
 
-	i = 1;
-	while (s[i] != '\0')
+	ptr = (char *) s;
+	d = (char) c;
+	i = 0;
+	while (ptr[i] != '\0')
 	{
-		if (s[i] == c)
-			return (s[i]);
+		if (ptr[i] == d)
+			return (&ptr[i]);
 		i++;
 	}
+	if (d == '\0')
+		return (&ptr[i]);
 	return (NULL);
-}
-
-int	main(void)
-{
-	const char *str = "Hello my friend";
-
-	printf("%p\n", ft_strchr(str, 'i'));
 }
