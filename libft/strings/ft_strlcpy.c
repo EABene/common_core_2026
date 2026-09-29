@@ -4,17 +4,17 @@
 size_t ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
-	size_t	src_length;
+	size_t	srclen;
 
-	src_length = ft_strlen(src);
+	srclen = ft_strlen(src);
 	if (dstsize == 0)
-		return (src_length);
+		return (srclen);
 	i = 0;
-	while (i < dstsize - 1 && i < src_length)
+	while (i < dstsize - 1 && i < srclen)
 	{
 		dst[i] = src[i];
 		i++;
 	}
 	dst[i] = '\0';
-	return (src_length);
+	return (srclen);
 }
