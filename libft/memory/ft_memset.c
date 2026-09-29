@@ -14,35 +14,15 @@
 
 void *ft_memset(void *s, int c, size_t n)
 {
-	// *s is pointer
-	// c is character to be filled in
-	// 
-	unsigned char	*p;
-	unsigned char	d;
+	unsigned char	*ptr;
 	size_t			i;
 
-	p = (unsigned char *)	s;
-	d = c;
+	ptr = (unsigned char *)	s;
 	i = 0;
 	while (i < n)
 	{
-		p[i] = d;
+		ptr[i] = (unsigned char) c;
 		i++;
 	}
 	return (s);
-}
-
-/*
-int	main(void)
-{
-	unsigned char c[60];
-	int	i;
-
-	i = 0;
-	ft_memset(c, 38, 50);
-	while (i < 60)
-	{
-		printf("%c", c[i]);
-		i++;
-	}
 }
