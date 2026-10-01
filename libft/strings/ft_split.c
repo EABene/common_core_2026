@@ -37,7 +37,7 @@ static int	length_word(char const *s, char c, int i)
 	return (size);
 }
 
-static void	free_map(char **map, int j)
+static char	**free_map(char **map, int j)
 {
 	while (j > 0)
 	{
@@ -45,6 +45,7 @@ static void	free_map(char **map, int j)
 		free(map[j]);
 	}
 	free(map);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -52,7 +53,6 @@ char	**ft_split(char const *s, char c)
 	char	**map;
 	int		i; // index for whole string
 	int		j; //index for map pointer
-	int		len;
 
 	map = malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (map == NULL)
@@ -63,15 +63,11 @@ char	**ft_split(char const *s, char c)
 	{
 		if (s[i] != c)
 		{
-			len = length_word(s, c, i);
-			map[j] = ft_substr(s, i, len);
+			map[j] = ft_substr(s, i, length_word(s, c, i));
 			if (map[j] == NULL)
-			{
-				free_map(map, j);
-				return (NULL);
-			}
+				return(free_map(map, j));
+			i = i + ft_strlen(map[j]);
 			j++;
-			i = i + len;
 		}
 		else
 			i++;
