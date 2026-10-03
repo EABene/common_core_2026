@@ -6,7 +6,7 @@
 /*   By: bsandler <bsandler@student.42vienna.c>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/03 13:20:54 by bsandler          #+#    #+#             */
-/*   Updated: 2026/10/03 13:21:14 by bsandler         ###   ########.fr       */
+/*   Updated: 2026/10/03 16:21:33 by bsandler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strrchr(const char *s, int c)
 			return (&ptr[i]);
 		i--;
 	}
-	if (d == ptr[i])
+	if (ptr[i] == d)
 		return (&ptr[i]);
 	return (NULL);
 }
