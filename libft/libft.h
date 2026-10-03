@@ -6,7 +6,7 @@
 /*   By: bsandler <bsandler@student.42vienna.c>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 15:56:37 by bsandler          #+#    #+#             */
-/*   Updated: 2026/10/03 12:14:40 by bsandler         ###   ########.fr       */
+/*   Updated: 2026/10/03 15:31:51 by bsandler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdio.h> // DONT FORGET TO DELETE
+# include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
 
