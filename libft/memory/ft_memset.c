@@ -6,7 +6,7 @@
 /*   By: bsandler <bsandler@student.42vienna.c>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/09/28 16:32:24 by bsandler          #+#    #+#             */
-/*   Updated: 2026/09/28 17:28:32 by bsandler         ###   ########.fr       */
+/*   Updated: 2026/10/03 12:19:09 by bsandler         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memset(void *s, int c, size_t n)
 	unsigned char	*ptr;
 	size_t			i;
 
-	ptr = (unsigned char *)	s;
+	ptr = (unsigned char *) s;
 	i = 0;
 	while (i < n)
 	{

@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bsandler <bsandler@student.42vienna.c>     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/03 12:23:10 by bsandler          #+#    #+#             */
+/*   Updated: 2026/10/03 12:24:30 by bsandler         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "libft.h"
 
@@ -51,8 +62,8 @@ static char	**free_map(char **map, int j)
 char	**ft_split(char const *s, char c)
 {
 	char	**map;
-	int		i; // index for whole string
-	int		j; //index for map pointer
+	int		i;
+	int		j;
 
 	map = malloc((count_words(s, c) + 1) * sizeof(char *));
 	if (map == NULL)
@@ -65,7 +76,7 @@ char	**ft_split(char const *s, char c)
 		{
 			map[j] = ft_substr(s, i, length_word(s, c, i));
 			if (map[j] == NULL)
-				return(free_map(map, j));
+				return (free_map(map, j));
 			i = i + ft_strlen(map[j]);
 			j++;
 		}
@@ -73,5 +84,5 @@ char	**ft_split(char const *s, char c)
 			i++;
 	}
 	map[j] = NULL;
-	return(map);
+	return (map);
 }
