@@ -24,7 +24,7 @@ t_list *ft_lstnew(void *content)
 	node->next = NULL;
 	return (node);
 }
-
+/*
 #include <stdio.h>
 
 int	main(void)
@@ -45,4 +45,4 @@ int	main(void)
 	free(node);
 	return (0);
 }
-
+*/
