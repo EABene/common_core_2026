@@ -1,0 +1,69 @@
+-- Leader-Taste
+vim.g.mapleader = " "
+
+local o = vim.opt
+
+-- Anzeige
+o.number = true
+o.relativenumber = true
+o.cursorline = true
+o.colorcolumn = "81"        -- Norm: max. 80 Zeichen
+o.signcolumn = "yes"
+o.scrolloff = 8
+o.wrap = false
+o.termguicolors = true
+
+-- Einrückung nach 42-Norm: echte Tabs, Breite 4
+o.tabstop = 4
+o.shiftwidth = 4
+o.softtabstop = 4
+o.expandtab = false
+
+-- Automatische Einrückung komplett aus
+o.autoindent = false
+o.smartindent = false
+o.cindent = false
+o.indentexpr = ""
+vim.cmd("filetype indent off")   -- keine Indent-Regeln pro Dateityp (z. B. C)
+
+-- Unsichtbare Zeichen anzeigen (Tabs vs. Spaces, Leerzeichen am Zeilenende)
+o.list = true
+o.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+
+-- Suche
+o.ignorecase = true
+o.smartcase = true
+o.hlsearch = true
+o.incsearch = true
+
+-- Sonstiges
+o.mouse = ""                -- Maus aus, zwingt zu Tastatur-Bewegungen
+o.clipboard = "unnamedplus" -- System-Zwischenablage
+o.undofile = true           -- Undo überlebt das Schließen der Datei
+o.swapfile = false
+o.splitright = true
+o.splitbelow = true
+
+-- Keymaps
+local map = vim.keymap.set
+map("n", "<Esc>", "<cmd>nohlsearch<CR>")         -- Suchmarkierung weg
+map("n", "<leader>w", "<cmd>w<CR>")              -- speichern
+map("n", "<leader>e", "<cmd>Ex<CR>")             -- Dateibrowser (netrw)
+map("n", "<leader>c", "<cmd>!cc -Wall -Wextra -Werror % -o /tmp/a.out && /tmp/a.out<CR>")
+                                                 -- aktuelle Datei kompilieren + ausführen
+
+-- Leerzeichen am Zeilenende beim Speichern entfernen (Norm-Fehler)
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = { "*.c", "*.h" },
+  command = [[%s/\s\+$//e]],
+})
+
+-- Plugins
+vim.pack.add({
+  "https://github.com/folke/tokyonight.nvim",
+  "https://github.com/rebelot/kanagawa.nvim",
+  { src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
+})
+
+vim.cmd.colorscheme("tokyonight")
+
