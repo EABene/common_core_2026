@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
 static int	in_set(char c, char const *set)
 {
