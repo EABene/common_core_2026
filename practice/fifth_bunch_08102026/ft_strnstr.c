@@ -1,22 +1,22 @@
 
 #include <stdio.h>
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char *ft_strnstr(const char *big, const char *little, size_t len)
 {
 	size_t	i;
 	size_t	j;
 
-	if (needle[0] == '\0')
-		return ((char *)haystack);
+	if (little[0] == '\0')
+		return ((char *)big);
 	i = 0;
-	while (i < len && haystack[i] != '\0')
+	while (i < len && big[i] != '\0')
 	{
 		j = 0;
-		while ((i + j) < len && haystack[i + j] == needle[j])
+		while (i + j < len && big[i + j] == little[j])
 		{
 			j++;
-			if (needle[j] == '\0')
-				return ((char *)&haystack[i]);
+			if (little[j] == '\0')
+				return ((char *)&big[i]);
 		}
 		i++;
 	}
@@ -25,8 +25,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 int	main(void)
 {
-	char	*x = "The West Texas Town of El Paso";
-	char	*y = "Town of";
 
-	printf("%s\n", ft_strnstr(x, y, 10));
+	printf("%s\n", ft_strnstr("Hello World", "World", 11));   /* World */
+	printf("%s\n", ft_strnstr("Hello World", "World", 8));    /* (null) */
+	printf("%s\n", ft_strnstr("Hello", "", 5));               /* Hello */
 }

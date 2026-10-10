@@ -12,18 +12,18 @@ size_t	ft_strlen(const char *s)
 	return (i);
 }
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	i;
 	size_t	j;
 
 	i = 0;
-	while (i < dstsize && dst[i] != '\0')
+	while (i < size && dst[i] != '\0')
 		i++;
-	if (i == dstsize)
+	if (i == size)
 		return (i + ft_strlen(src));
 	j = 0;
-	while (i + j < dstsize - 1 && src[j] != '\0')
+	while (i + j < size - 1 && src[j] != '\0')
 	{
 		dst[i + j] = src[j];
 		j++;
@@ -34,14 +34,14 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 
 int	main(void)
 {
-	char a[100] = "East Texas ";
-	char *b = "Town of El Paso";
-	char c[100] = "East Texas ";
-	char *d = "Town of El Paso";
+	char x[100] = "East Texas Town of el Paso";
+	char *y = " is nice";
+	char c[100] = "East Texas Town of el Paso";
+	char *d = " is nice";
 
-	size_t x = ft_strlcat(a, b, 99);
-	size_t y = strlcat(c, d, 99);
+	size_t a = ft_strlcat(x, y, 99);
+	size_t b = strlcat(c, d, 99);
 
-	printf("%s | %s\n", a, c);
-	printf("%zu | %zu\n", x, y);
+	printf("%s\n", x);
+	printf("%zu\n", a);
 }
