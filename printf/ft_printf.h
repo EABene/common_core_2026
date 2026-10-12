@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HEADER_H
-# define HEADER_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stdio.h>
 # include <unistd.h>
@@ -22,6 +22,7 @@
 size_t	ft_strlen(const char *s);
 void	ft_putchar(const char c);
 void	ft_putstr(const char *str);
+void	ft_putnbr(int n);
 
 
 #endif
