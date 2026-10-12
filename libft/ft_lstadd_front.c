@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void	ft_lstadd_front(t_list **lst, t_list *new)
 {
@@ -20,3 +19,32 @@ void	ft_lstadd_front(t_list **lst, t_list *new)
 	new->next = *lst;
 	*lst = new;
 }
+
+/*
+#include <stdio.h>
+int	main(void)
+{
+	t_list	*head;
+	t_list	*node1;
+	t_list	*node2;
+	t_list	*node3;
+	t_list	*node4;
+	t_list	*tmp;
+
+	node1 = ft_lstnew("Texas");
+	head = node1;
+	node2 = ft_lstnew("Alabama");
+	node3 = ft_lstnew("Florida");
+	node4 = ft_lstnew("Virginia");
+	ft_lstadd_front(&head, node2);
+	ft_lstadd_front(&head, node3);
+	ft_lstadd_front(&head, node4);
+	tmp = head;
+	while (tmp != NULL)
+	{
+		printf("%s\n", (char *)tmp->content);
+		tmp = tmp->next;
+	}
+	return (0);
+}
+*/

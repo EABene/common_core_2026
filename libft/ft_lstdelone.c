@@ -20,3 +20,26 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 	del(lst->content);
 	free(lst);
 }
+
+/*
+#include <stdio.h>
+static void	del(void *content)
+{
+	printf("del: %s\n", (char *)content);
+	free(content);
+}
+
+int	main(void)
+{
+	t_list	*node1;
+	t_list	*node2;
+
+	node1 = ft_lstnew(ft_strdup("Texas"));
+	node2 = ft_lstnew(ft_strdup("Oklahoma"));
+	node1->next = node2;
+	ft_lstdelone(node1, del);
+	printf("node2 still here: %s\n", (char *)node2->content);
+	ft_lstdelone(node2, del);
+	return (0);
+}
+*/

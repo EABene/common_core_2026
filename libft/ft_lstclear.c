@@ -26,3 +26,27 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 		*lst = next;
 	}
 }
+
+/*
+#include <stdio.h>
+static void	del(void *content)
+{
+	printf("del: %s\n", (char *)content);
+	free(content);
+}
+
+int	main(void)
+{
+	t_list	*head;
+
+	head = NULL;
+	ft_lstadd_back(&head, ft_lstnew(ft_strdup("Arizona")));
+	ft_lstadd_back(&head, ft_lstnew(ft_strdup("Texas")));
+	ft_lstadd_back(&head, ft_lstnew(ft_strdup("New Mexico")));
+	ft_lstclear(&head, del);
+	printf("head: %p\n", (void *)head);
+	ft_lstclear(&head, del);
+	printf("second lstclear: no crash\n");
+	return (0);
+}
+*/

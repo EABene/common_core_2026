@@ -37,3 +37,50 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	}
 	return (new_list);
 }
+
+/*
+#include <stdio.h>
+static void	*to_upper_copy(void *content)
+{
+	char	*copy;
+	int		i;
+
+	copy = ft_strdup((char *)content);
+	if (copy == NULL)
+		return (NULL);
+	i = 0;
+	while (copy[i] != '\0')
+	{
+		copy[i] = ft_toupper(copy[i]);
+		i++;
+	}
+	return (copy);
+}
+
+static void	print_list(t_list *lst)
+{
+	while (lst != NULL)
+	{
+		printf("%s\n", (char *)lst->content);
+		lst = lst->next;
+	}
+}
+
+int	main(void)
+{
+	t_list	*head;
+	t_list	*mapped;
+
+	head = NULL;
+	ft_lstadd_back(&head, ft_lstnew("wisconsin"));
+	ft_lstadd_back(&head, ft_lstnew("kentucky"));
+	ft_lstadd_back(&head, ft_lstnew("georgia"));
+	mapped = ft_lstmap(head, to_upper_copy, free);
+	printf("--- original ---\n");
+	print_list(head);
+	printf("--- mapped ---\n");
+	print_list(mapped);
+	ft_lstclear(&mapped, free);
+	return (0);
+}
+*/

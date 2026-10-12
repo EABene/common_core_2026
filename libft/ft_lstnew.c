@@ -28,8 +28,29 @@ t_list	*ft_lstnew(void *content)
 /*
 int	main(void)
 {
-	size_t *node;
+	t_list	*node;
+	char	*text;
+	int		number;
 
-
+	text = "Bullfrog";
+	node = ft_lstnew(text);
+	if (node == NULL)
+		return (1);
+	printf("Content string:  %s\n", (char *)node->content);
+	free(node);
+// ======
+	number = 42;
+	node = ft_lstnew(&number);
+	if (node == NULL)
+		return (1);
+	printf("Content int: %d\n", *(int *)node->content);
+	free(node);
+//======
+	node = ft_lstnew(NULL);
+	if (node == NULL)
+		return (1);
+	printf("Content NULL: %p\n", node->content);
+	free(node);
+	return (0);
 }
 */

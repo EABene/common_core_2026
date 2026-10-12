@@ -24,3 +24,25 @@ unsigned int	ft_lstsize(t_list *lst)
 	}
 	return (i);
 }
+
+/*
+#include <stdio.h>
+int	main(void)
+{
+	t_list			*head;
+	t_list			*node1;
+	t_list			*node2;
+	t_list			*node3;
+	t_list			*node4;
+
+	node1 = ft_lstnew("Node");
+	head = node1;
+	node2 = ft_lstnew("Node");
+	node3 = ft_lstnew("Node");
+	node4 = ft_lstnew("Node");
+	ft_lstadd_back(&head, node2);
+	ft_lstadd_back(&head, node3);
+	ft_lstadd_back(&head, node4);
+	printf("%d\n", ft_lstsize(head));
+}
+*/

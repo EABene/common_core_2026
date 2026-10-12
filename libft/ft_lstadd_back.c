@@ -26,3 +26,32 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	last = ft_lstlast(*lst);
 	last->next = new;
 }
+
+/*
+#include <stdio.h>
+int	main(void)
+{
+	t_list	*head;
+	t_list	*node1;
+	t_list	*node2;
+	t_list	*node3;
+	t_list	*node4;
+	t_list	*tmp;
+
+	node1 = ft_lstnew("California");
+	head = node1;
+	node2 = ft_lstnew("Colorado");
+	node3 = ft_lstnew("Oregon");
+	node4 = ft_lstnew("Washington");
+	ft_lstadd_back(&head, node2);
+	ft_lstadd_back(&head, node3);
+	ft_lstadd_back(&head, node4);
+	tmp = head;
+	while (tmp != NULL)
+	{
+		printf("%s\n", (char *)tmp->content);
+		tmp = tmp->next;
+	}
+	return (0);
+}
+*/
