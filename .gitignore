@@ -1,6 +1,6 @@
 # MacOS specifics
 .DS_Store
-
+libftTester
 # Prerequisites
 *.d
 
