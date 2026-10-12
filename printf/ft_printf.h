@@ -19,10 +19,11 @@
 # include <stddef.h>
 # include <stdarg.h>
 
-size_t	ft_strlen(const char *s);
-void	ft_putchar(const char c);
-void	ft_putstr(const char *str);
-void	ft_putnbr(int n);
-
+int	ft_strlen(const char *s);
+int	ft_putchar(const char c);
+int	ft_putstr(const char *str);
+int	ft_putnbr(int n);
+int	ft_putnbr_base(unsigned long n, char *base);
+int	ft_putptr(void *ptr);
 
 #endif

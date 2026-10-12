@@ -10,62 +10,56 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "ft_printf.h"
 #include <stdarg.h>
 
 // has to handle the following conversions: cspiuxX%
-// %csd fertig, piuxX left
+// DONE -> %c %s %d %i %%
+// TO-DO -> %p %u %x %X
+
+static int ft_convert(char sign, va_list *args)
+{
+	if (sign == 'c')
+		return (ft_putchar(va_arg(*args, int)));
+	else if (sign == 's')
+		return (ft_putstr(va_arg(*args, char *)));
+	else if (sign == 'd' || sign == 'i')
+		return (ft_putnbr(va_arg(*args, int)));
+	else if (sign == '%')
+		return (ft_putchar('%'));
+	return (ft_putchar('%') + ft_putchar(sign));
+
+}
 
 int	ft_printf(const char* format, ...)
 {
 	va_list	args;
 	size_t	i;
+	int		count;
 
 	va_start(args, format);
 	i = 0;
+	count = 0;
 	while (format[i] != '\0')
 	{
-		if (format[i] == '%')
+		if (format[i] == '%' && format[i + 1])
 		{
-			if (format[i + 1] == 'c')
-			{
-				ft_putchar(va_arg(args, int));
-				i = i + 2;
-			}
-			if (format[i + 1] == '%')
-			{
-				ft_putchar('%');
-				i = i + 2;
-			}
-			if (format[i + 1] == 's')
-			{
-				ft_putstr(va_arg(args, char *));
-				i = i + 2;
-			}
-			if (format[i + 1] == 'd')
-			{
-				ft_putnbr(va_arg(args, int));
-				i = i + 2;
-			}
+			count += ft_convert(format[i + 1], &args);
+			i += 2;
 		}
 		else
 		{
-			ft_putchar(format[i]);
+			count += ft_putchar(format[i]);
 			i++;
 		}
 	}
 	va_end(args);
-	return (1);
+	return (count);
 }
 
 int	main(void)
 {
-	char a = 'A';
-	char b = 'B';
-	char *str = "really beautiful";
-
-	ft_printf("Initials: %c. %c., 100%%, that is %s.\n", a, b, str);
-	ft_printf("Numbers are %d, %d, %d, %d and %d", 1, 2, 3, 4, 5);
-	return (0);
+	int	r1 = ft_printf("%cx%d|%s|\n", 'A', -42, "Word");
+	int	r2 = printf("%cx%d|%s|\n", 'A', -42, "Word");
+	printf("ft: %d, orig: %d\n", r1, r2);
 }
