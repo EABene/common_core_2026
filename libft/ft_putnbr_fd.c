@@ -32,7 +32,7 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	else if (nb < 10)
 	{
-		temp = nb % 10 + '0';
+		temp = nb + '0';
 		write(fd, &temp, 1);
 	}
 }
