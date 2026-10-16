@@ -19,6 +19,7 @@
 # include <stddef.h>
 # include <stdarg.h>
 
+int	ft_printf(const char *format, ...);
 int	ft_strlen(const char *s);
 int	ft_putchar(const char c);
 int	ft_putstr(const char *str);

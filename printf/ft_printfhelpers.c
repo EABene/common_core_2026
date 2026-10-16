@@ -20,7 +20,7 @@ int	ft_putchar(const char c)
 int	ft_putstr(const char *str)
 {
 	if (str == NULL)
-		return (1);
+		return (write(1, "(null)", 6));
 	write(1, str, ft_strlen(str));
 	return (ft_strlen(str));
 }

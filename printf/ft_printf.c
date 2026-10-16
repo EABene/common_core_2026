@@ -65,14 +65,3 @@ int	ft_printf(const char* format, ...)
 	va_end(args);
 	return (count);
 }
-
-int	main(void)
-{
-	int	x;
-int	r1;
-int	r2;
-
-r1 = ft_printf("%p %p\n", &x, NULL);
-r2 = printf("%p %p\n", (void *)&x, NULL);
-printf("ft: %d, orig: %d\n", r1, r2);
-}
