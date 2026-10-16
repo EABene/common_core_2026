@@ -12,6 +12,7 @@
 
 #include "ft_printf.h"
 #include <stdarg.h>
+#include <limits.h>
 
 // has to handle the following conversions: cspiuxX%
 // DONE -> %c %s %d %i %%
@@ -20,16 +21,23 @@
 
 static int ft_convert(char sign, va_list *args)
 {
-	if (sign == 'c')
+	if (sign == '%')
+		return (ft_putchar('%'));
+	else if (sign == 'c')
 		return (ft_putchar(va_arg(*args, int)));
 	else if (sign == 's')
 		return (ft_putstr(va_arg(*args, char *)));
 	else if (sign == 'd' || sign == 'i')
 		return (ft_putnbr(va_arg(*args, int)));
-	else if (sign == '%')
-		return (ft_putchar('%'));
+	else if (sign == 'u')
+		return (ft_putnbr(va_arg(*args, unsigned int)));
+	else if (sign == 'x')
+		return (ft_putnbr_base(va_arg(*args, unsigned int), "0123456789abcdef"));
+	else if (sign == 'X')
+		return (ft_putnbr_base(va_arg(*args, unsigned int), "0123456789ABCDEF"));
+	else if (sign == 'p')
+		return (ft_putptr(va_arg(*args, void *)));
 	return (ft_putchar('%') + ft_putchar(sign));
-
 }
 
 int	ft_printf(const char* format, ...)
@@ -60,7 +68,11 @@ int	ft_printf(const char* format, ...)
 
 int	main(void)
 {
-	int	r1 = ft_printf("%cx%d|%s|\n", 'A', -42, "Word");
-	int	r2 = printf("%cx%d|%s|\n", 'A', -42, "Word");
-	printf("ft: %d, orig: %d\n", r1, r2);
+	int	x;
+int	r1;
+int	r2;
+
+r1 = ft_printf("%p %p\n", &x, NULL);
+r2 = printf("%p %p\n", (void *)&x, NULL);
+printf("ft: %d, orig: %d\n", r1, r2);
 }

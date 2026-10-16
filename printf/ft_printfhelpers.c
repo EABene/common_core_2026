@@ -25,57 +25,26 @@ int	ft_putstr(const char *str)
 	return (ft_strlen(str));
 }
 
-int	ft_putnbr(int n)
+int	ft_putnbr(long n)
 {
 	char	temp;
-	long	nb;
 	int		count;
 
-	nb = n;
 	count = 0;
-	if (nb < 0)
+	if (n < 0)
 	{
 		count += write(1, "-", 1);
-		nb = nb * - 1;
+		n = n * - 1;
 	}
-	if (nb >= 10)
+	if (n >= 10)
 	{
-		count += ft_putnbr(nb / 10);
-		temp = nb % 10 + '0';
+		count += ft_putnbr(n / 10);
+		temp = n % 10 + '0';
 		count += write(1, &temp, 1);
 	}
-	else if (nb < 10)
+	else if (n < 10)
 	{
-		temp = nb + '0';
-		write(1, &temp, 1);
-		count++;
-	}
-	return (count);
-}
-
-//TODO
-int	ft_putnbr_base(unsigned long n, char *base)
-{ // redo it, so it can handle base
-	char	temp;
-	long	nb;
-	int		count;
-
-	nb = n;
-	count = 0;
-	if (nb < 0)
-	{
-		count += write(1, "-", 1);
-		nb = nb * - 1;
-	}
-	if (nb >= 10)
-	{
-		count += ft_putnbr(nb / 10);
-		temp = nb % 10 + '0';
-		count += write(1, &temp, 1);
-	}
-	else if (nb < 10)
-	{
-		temp = nb + '0';
+		temp = n + '0';
 		write(1, &temp, 1);
 		count++;
 	}

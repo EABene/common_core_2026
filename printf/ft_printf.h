@@ -22,7 +22,7 @@
 int	ft_strlen(const char *s);
 int	ft_putchar(const char c);
 int	ft_putstr(const char *str);
-int	ft_putnbr(int n);
+int	ft_putnbr(long n);
 int	ft_putnbr_base(unsigned long n, char *base);
 int	ft_putptr(void *ptr);
 
