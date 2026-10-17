@@ -1,10 +1,10 @@
 
 NAME	= libftprintf.a
 
-CC = cc
-CFLAGS = -Wall -Wextra -Werror
+CC		= cc
+CFLAGS	= -Wall -Wextra -Werror
 
-SRCS = ft_printf.c ft_printfhelpers.c ft_putnbr_base.c
+SRCS	= ft_printf.c ft_printf_text.c ft_printf_nbrs.c
 
 OBJS	= $(SRCS:.c=.o)
 

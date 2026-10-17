@@ -12,7 +12,6 @@
 
 #include "ft_printf.h"
 #include <stdarg.h>
-#include <limits.h>
 
 // has to handle the following conversions: cspiuxX%
 // DONE -> %c %s %d %i %%
