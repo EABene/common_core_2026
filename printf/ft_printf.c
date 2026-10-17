@@ -18,7 +18,7 @@
 // TO-DO -> %p %u %x %X
 // so basically it is about putnbr BASE and different versions of that
 
-static int ft_convert(char sign, va_list *args)
+static int	ft_convert(char sign, va_list *args)
 {
 	if (sign == '%')
 		return (ft_putchar('%'));
@@ -31,15 +31,17 @@ static int ft_convert(char sign, va_list *args)
 	else if (sign == 'u')
 		return (ft_putnbr(va_arg(*args, unsigned int)));
 	else if (sign == 'x')
-		return (ft_putnbr_base(va_arg(*args, unsigned int), "0123456789abcdef"));
+		return (ft_putnbr_base(va_arg(*args, unsigned int),
+				"0123456789abcdef"));
 	else if (sign == 'X')
-		return (ft_putnbr_base(va_arg(*args, unsigned int), "0123456789ABCDEF"));
+		return (ft_putnbr_base(va_arg(*args, unsigned int),
+				"0123456789ABCDEF"));
 	else if (sign == 'p')
 		return (ft_putptr(va_arg(*args, void *)));
 	return (ft_putchar('%') + ft_putchar(sign));
 }
 
-int	ft_printf(const char* format, ...)
+int	ft_printf(const char *format, ...)
 {
 	va_list	args;
 	size_t	i;

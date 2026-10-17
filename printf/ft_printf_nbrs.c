@@ -21,7 +21,7 @@ int	ft_putnbr(long n)
 	if (n < 0)
 	{
 		count += write(1, "-", 1);
-		n = n * - 1;
+		n = n * -1;
 	}
 	if (n >= 10)
 	{
@@ -67,7 +67,7 @@ int	ft_putptr(void *ptr)
 
 	count = 0;
 	if (!ptr)
-		return (ft_putstr("0x0")); // change up to (nil) for Linux!!
+		return (ft_putstr("(nil)"));
 	else
 	{
 		count += ft_putstr("0x");
