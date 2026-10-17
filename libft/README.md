@@ -76,9 +76,9 @@ Each node of a list is a t_list with two members: content, a void pointer to dat
 
 #### Use of AI
 
-In line with the AI guidelines of the subject, AI (Claude by Anthropic) was used as a learning aid, not as a substitute for writing code:
+In line with the AI guidelines of the subject, AI was used as a learning aid, not as a substitute for writing code.
 
 - Explanations: answering questions that came up while working, for example about technical terms, pointers, size_t, linked lists, function pointers and Makefiles.
 - Testing: generating test programs that compare the functions against libc, and running them.
 
-All code in this repository was typed and developed by me, and I chose my own approach on how to make it work. 
+All code in this repository was typed and developed by me, and I chose my own approach on how to make it work.
