@@ -16,10 +16,10 @@ int	main(int argc, char **argv)
 		return (-1);
 	while (bytes != 0)
 	{
+		bytes = read(fd, BUFFER, 10);
 		write(1, "[", 1);
-		write(1, &BUFFER, 4);
+		write(1, &BUFFER, 10);
 		write(1, "]", 1);
-		bytes = read(fd, BUFFER, 5);
 	}
 
 	close(fd);
