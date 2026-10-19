@@ -13,11 +13,6 @@
 #include "ft_printf.h"
 #include <stdarg.h>
 
-// has to handle the following conversions: cspiuxX%
-// DONE -> %c %s %d %i %%
-// TO-DO -> %p %u %x %X
-// so basically it is about putnbr BASE and different versions of that
-
 static int	ft_convert(char sign, va_list *args)
 {
 	if (sign == '%')
