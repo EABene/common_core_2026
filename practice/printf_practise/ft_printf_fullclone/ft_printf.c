@@ -1,8 +1,8 @@
 
 #include "ft_printf.h"
-#include <stdio.h>
+#include <stdarg.h>
 
-int	ft_convert(char c, va_list *args)
+static int	ft_convert(char c, va_list *args)
 {
 	if (c == '%')
 		return (ft_putchar('%'));
