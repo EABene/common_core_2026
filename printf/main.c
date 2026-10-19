@@ -34,7 +34,7 @@ int	main(void)
 	TEST("%c", 0);
 
 	/* %s */
-	TEST("%s", "Hallo Krems");
+	TEST("%s", "This is a string");
 	TEST("%s", "");
 	TEST("%s", null_str);
 	TEST("%s|%s", "a", "bc");

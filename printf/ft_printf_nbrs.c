@@ -14,7 +14,7 @@
 
 int	ft_putnbr(long n)
 {
-	char	temp;
+	char	c;
 	int		count;
 
 	count = 0;
@@ -26,21 +26,20 @@ int	ft_putnbr(long n)
 	if (n >= 10)
 	{
 		count += ft_putnbr(n / 10);
-		temp = n % 10 + '0';
-		count += write(1, &temp, 1);
+		c = n % 10 + '0';
+		count += write(1, &c, 1);
 	}
 	else if (n < 10)
 	{
-		temp = n + '0';
-		write(1, &temp, 1);
-		count++;
+		c = n + '0';
+		count += write(1, &c, 1);
 	}
 	return (count);
 }
 
 int	ft_putnbr_base(unsigned long n, char *base)
 {
-	char			temp;
+	char			c;
 	int				count;
 	unsigned long	len;
 
@@ -49,14 +48,13 @@ int	ft_putnbr_base(unsigned long n, char *base)
 	if (n >= len)
 	{
 		count += ft_putnbr_base(n / len, base);
-		temp = base[n % len];
-		count += write(1, &temp, 1);
+		c = base[n % len];
+		count += write(1, &c, 1);
 	}
 	else if (n < len)
 	{
-		temp = base[n];
-		write(1, &temp, 1);
-		count++;
+		c = base[n];
+		count += write(1, &c, 1);
 	}
 	return (count);
 }
