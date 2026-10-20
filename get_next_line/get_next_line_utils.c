@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-#include <stdlib.h>
 
 size_t	ft_strlen(const char *s)
 {
@@ -59,4 +58,24 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		ft_strlcat(dupe, s1, size);
 	ft_strlcat(dupe, s2, size);
 	return (dupe);
+}
+
+char	*ft_strchr(const char *s, int c)
+{
+	char	*str;
+	size_t	i;
+
+	if (!s)
+		return (NULL);
+	str = (char *) s;
+	i = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] == (char)c)
+			return (&str[i]);
+		i++;
+	}
+	if ((char)c == '\0')
+		return (&str[i]);
+	return (NULL);
 }

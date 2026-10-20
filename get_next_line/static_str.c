@@ -1,6 +1,5 @@
 
 #include "get_next_line.h"
-#include <stdlib.h>
 
 // TODO: make this function work, by using ft_strlen and ft_strjoin
 char	*ft_buffer(char	*piece)

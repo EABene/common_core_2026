@@ -10,8 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-char *get_next_line(int fd)
+#include "get_next_line.h"
+
+char	*ft_buffer(char *piece)
+{
+	static char	*buffer;
+
+
+}
+
+char	*get_next_line(int fd)
 {
 	
 
+}
+
+int	main(int argc, char *argv)
+{
+	if (argc != 2)
+	{
+		write(1, "Provide one argument\n", 21);
+		return (1);
+	}
 }
