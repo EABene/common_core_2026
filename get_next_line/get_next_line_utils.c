@@ -17,6 +17,8 @@ size_t	ft_strlen(const char *s)
 {
 	size_t	i;
 
+	if (!s)
+		return (0);
 	i = 0;
 	while (s[i] != '\0')
 		i++;
@@ -53,7 +55,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (dupe == NULL)
 		return (NULL);
 	dupe[0] = '\0';
-	ft_strlcat(dupe, s1, size);
+	if (s1)
+		ft_strlcat(dupe, s1, size);
 	ft_strlcat(dupe, s2, size);
 	return (dupe);
 }
