@@ -7,8 +7,6 @@ size_t	ft_strlen(const char *s);
 int	ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 char	*ft_strjoin(char const *s1, char const *s2);
-char	*char_to_str(char c);
-char	*to_buffer(char	c);
 char	*ft_putnbr_base(unsigned long n, char *base);
 
 size_t	ft_strlen(const char *s)
@@ -90,19 +88,24 @@ char	*ft_putnbr_base(unsigned long n, char *base)
 	return (res);
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
 	size_t	i;
 	char	*alphabet;
 	char	*s;
+//	int		len;
 
+	(void) argc;
+	(void) argv;
 	i = 0;
+
 	alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	while (1)
 	{
 		s = ft_putnbr_base(i, alphabet);
-		if (ft_strncmp(s, "XXX", 3) == 0)
+		if (ft_strncmp(s, "XYZ", 3) == 0)
 		{
+			i++;
 			free(s);
 			break ;
 		}
