@@ -2,6 +2,8 @@
 .DS_Store
 libftTester
 printfTester
+gnlTester
+germinette
 
 # Prerequisites
 *.d
