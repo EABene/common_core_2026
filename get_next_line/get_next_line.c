@@ -50,18 +50,43 @@ static char	*ft_get_rest(char *stash)
 	return (rest);
 }
 
-char	*read_to_stash(char *buffer)
+static char	*read_to_stash(int fd, char *stash)
 {
-	// reads to my stash and returns buffer
+	char	*buffer;
+	char	*tmp;
+	int		bytes;
+
+	buffer = malloc(BUFFER_SIZE + 1);
+	if (!buffer)
+		return (free(stash), NULL);
+	bytes = 1;
+	while (!ft_strchr(stash, '\n') && bytes > 0)
+	{
+		bytes = read(fd, buffer, BUFFER_SIZE);
+		if (bytes == -1)
+			return (free(buffer), free(stash), NULL);
+		buffer[bytes] = '\0';
+		tmp = ft_strjoin(stash, buffer);
+		free(stash);
+		stash = tmp;
+		if (!stash)
+			return (free(buffer), NULL);
+	}
+	free(buffer);
+	return (stash);
 }
 
-char	*get_next_line(int fd);
+char	*get_next_line(int fd)
 {
-	// core function
-}
+	static char	*stash;
+	char *line;
 
-int	main(int argc, char *argv)
-{
-	if (argc != 2)
-		return (1);
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
+	stash = read_to_stash(fd, stash);
+	if (!stash)
+		return (NULL);
+	line = ft_get_line(stash);
+	stash = ft_get_rest(stash);
+	return (line);
 }
