@@ -1,17 +1,10 @@
 
 def ft_count_harvest_recursive():
-    max_days = int(input("Days until harvest: "))
-    if max_days < 1:
-        print("Harvest time!")
-        return
-    day = 1
-
-    def ft_recursion(max_days, day):
-        if day != max_days:
-            print(f"Day {day}")
-            day += 1
-            ft_recursion(max_days, day)
-        else:
-            print(f"Day {day}")
+    def count(day: int, max_days: int):
+        if day > max_days:
             print("Harvest time!")
-    ft_recursion(max_days, day)
+            return
+        print(f"Day {day}")
+        count(day + 1, max_days)
+    max_days = int(input("Days until harvest: "))
+    count(1, max_days)
