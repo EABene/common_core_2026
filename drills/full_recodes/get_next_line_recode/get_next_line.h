@@ -1,0 +1,32 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bsandler <bsandler@student.42vienna.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/10/27 21:23:47 by bsandler          #+#    #+#             */
+/*   Updated: 2026/10/27 21:26:19 by bsandler         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
+
+# include <stdlib.h>
+# include <stdio.h> // remove later
+
+// strlen
+// strlcat
+// strjoin
+// strchr
+
+
+
+
+
+
+
+
+
+#endif
