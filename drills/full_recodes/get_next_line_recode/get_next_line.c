@@ -10,16 +10,43 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+char	*ft_get_line(char *stash)
+{
+
+}
+
+char	*ft_get_rest(char *stash)
+{
+
+}
+
+char	*read_to_stash(int fd, char *stash)
+{
+	char	*buffer;
+	int		bytes;
+	
+	bytes = 1;
+	while (!ft_strchr(stash, '\n') && bytes > 0)
+	{
+		bytes = read(fd, buffer, BUFFER_SIZE);
+		if (bytes == -1)
+			return (NULL);
+		buffer[bytes] = '\0';
+		// continue here!
+	}
+}
+
 char	*get_next_line(int fd)
 {
 	static char	*stash;
 	char		*line;
 
-	// ungültige Eingabe -> NULL
-	// Lese und an stash anhängen, solange kein \n gekommen is
-	// und read noch etwas liefert != 0 = kein Dateiende
-	// stash leer? nichts mehr da -> NULL
-	// line = alles bis incl. \n (oder bis zum Ende)
-	// stash = nur noch der Rest danach
-	// return line
+	if (fd < 0 || BUFFER_SIZE <= 0)
+		return (NULL);
+	stash = read_to_stash(fd, stash);
+	if (!stash)
+		return (NULL);
+	line = ft_get_line(stash);
+	stash = ft_get_rest(stash);
+	return (line);
 }
