@@ -39,8 +39,7 @@ Design choices:
 - `ft_putchar` and `ft_putstr` are kept separate: `%c` must also print `'\0'`,
   which a string function would treat as the end of the string.
 - One `putnbr(long)` handles `%d %i %u`; one `putnbr_base` handles `%x %X %p`.
-- Every helper returns the number of characters written, which sums up to the
-  return value.
+- Every helper function returns the number of characters written, which sums up to the return value.
 - Edge cases follow Linux/glibc, e.g. a NULL pointer prints `(nil)`.
 - Libft is not used: the helpers were rewritten to return the number of
   characters printed, which the libft versions do not.
