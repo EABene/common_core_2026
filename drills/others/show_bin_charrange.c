@@ -46,10 +46,13 @@ int	ft_putnbr_base(long nb, char *base)
 int	main(void)
 {
 	char *base;
-	int len;
+	int	i;
 
-	base = "01234567";
-	len = ft_putnbr_base(8, base);
-	write(1, "\n", 1);
-	printf("%i", len);
+	i = -1;
+	base = "01";
+	while (i++ < 255)
+	{
+		ft_putnbr_base(i, base);
+		write(1, "\n", 1);
+	}
 }
