@@ -6,8 +6,6 @@ static char	*get_rest(char *stash)
 	char	*rest;
 	int		i;
 
-	if (!stash[0])
-		return (NULL);
 	i = 0;
 	while (stash[i] != '\n' && stash[i] != '\0')
 		i++;
@@ -18,8 +16,8 @@ static char	*get_rest(char *stash)
 	}
 	else
 	{
-		rest = ft_strjoin(NULL, &stash[i]);
-		free(buffer);
+		rest = ft_strjoin(NULL, &stash[i + 1]);
+		free(stash);
 		return (rest);
 	}
 }
@@ -44,7 +42,6 @@ static char	*get_line(char *stash)
 	return (line);
 }
 
-
 static char	*read_to_stash(char *stash, int fd)
 {
 	char	*buffer;
@@ -53,23 +50,21 @@ static char	*read_to_stash(char *stash, int fd)
 
 	buffer = malloc(BUFFER_SIZE + 1);
 	if (!buffer)
-		return (NULL);
+		return (free(stash), NULL);
 	bytes = 1;
 	while (!ft_strchr(stash, '\n') && bytes != 0)
 	{
 		bytes = read(fd, buffer, BUFFER_SIZE);
 		if (bytes < 0)
-		{
-			free(buffer);
-			return (NULL);
-		}
+			return (free(buffer), free(stash), NULL);
 		buffer[bytes] = '\0';
 		tmp = ft_strjoin(stash, buffer);
 		free(stash);
 		stash = tmp;
+		if (stash == NULL)
+			return (free(buffer), NULL);
 	}
-	free(buffer);
-	return (stash);
+	return (free(buffer), stash);
 }
 
 char	*get_next_line(int fd)
