@@ -11,11 +11,12 @@
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include <unistd.h>
 
 char	*ft_get_line(char *stash)
 {
 	size_t		i;
-	char	*buffer;
+	char		*line;
 
 	if (!stash || !stash[0])
 		return (NULL);
@@ -24,12 +25,12 @@ char	*ft_get_line(char *stash)
 		i++;
 	if (stash[i] == '\n')
 		i++;
-	buffer = malloc(i + 1);
-	if (!buffer)
+	line = malloc(i + 1);
+	if (!line)
 		return (NULL);
 	line[0] = '\0';
 	ft_strlcat(line, stash, i + 1);
-	return (buffer);
+	return (line);
 }
 
 char	*ft_get_rest(char *stash)
@@ -42,20 +43,20 @@ char	*ft_get_rest(char *stash)
 	i = 0;
 	while (stash[i] != '\n' && stash[i] != '\0')
 		i++;
-	if (stash[i] == '\0') || stash [i + 1] == '\0')
+	if (stash[i] == '\0' || stash [i + 1] == '\0')
 	{
 		free(stash);
 		return (NULL);
 	}
-	rest = ft_strjoin(NULL, &stash[i + 1];
+	rest = ft_strjoin(NULL, &stash[i + 1]);
 	free(stash);
-	return (rest);	
+	return (rest);
 }
 
 char	*read_to_stash(int fd, char *stash)
 {
 	char	*buffer;
-	char	*temp;
+	char	*tmp;
 	int		bytes;
 
 	buffer = malloc(BUFFER_SIZE + 1);
@@ -74,8 +75,8 @@ char	*read_to_stash(int fd, char *stash)
 		if (!stash)
 			return (free(buffer), NULL);
 		free(buffer);
-		return (stash);
 	}
+	return (stash);
 }
 
 char	*get_next_line(int fd)

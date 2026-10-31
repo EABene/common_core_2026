@@ -13,8 +13,6 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <unistd.h>
-
 int	ft_printf(const char *format, ...);
 int	ft_strlen(const char *s);
 int	ft_putchar(const char c);

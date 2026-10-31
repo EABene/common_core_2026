@@ -21,6 +21,8 @@
 # include <stdio.h> // remove later
 
 char	*get_next_line(int fd);
+char	*ft_get_line(char *stash);
+char	*ft_get_rest(char *stash);
 size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
