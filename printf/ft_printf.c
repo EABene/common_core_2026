@@ -33,7 +33,7 @@ static int	ft_convert(char sign, va_list *args)
 				"0123456789ABCDEF"));
 	else if (sign == 'p')
 		return (ft_putptr(va_arg(*args, void *)));
-	return (ft_putchar('%') + ft_putchar(sign));
+	return (0);
 }
 
 int	ft_printf(const char *format, ...)

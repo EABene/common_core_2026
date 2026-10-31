@@ -1,8 +1,10 @@
 
 #include "ft_printf.h"
+#include <stdio.h>
 
 int	main(void)
 {
+	/*
 	void	*ptr;
 
 	ptr = NULL;
@@ -16,4 +18,7 @@ int	main(void)
 	ft_printf("%X\n", 429496);
 	ft_printf("%p\n", "Pointer");
 	ft_printf("%p\n", ptr);
+	
+	*/
+	printf("%t", "asdf");
 }
