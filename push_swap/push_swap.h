@@ -16,5 +16,4 @@ size_t	ft_strlen(const char *s);
 int		ft_atoi(const char *str);
 void	*ft_calloc(size_t count, size_t size);
 
-
 #endif
