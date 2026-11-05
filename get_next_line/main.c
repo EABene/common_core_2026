@@ -11,9 +11,9 @@ int	main(int argc, char **argv)
 	(void)argc;
 	fd = open(argv[1], O_RDONLY);
 	line = get_next_line(fd);
-	printf("%s", line);
+	printf("%sZ", line);
 	line = get_next_line(fd);
-	printf("%s", line);
+	printf("%sZ", line);
 	line = get_next_line(fd);
 	printf("%s", line);
 	/*
