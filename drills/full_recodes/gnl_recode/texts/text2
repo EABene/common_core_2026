@@ -1,0 +1,18 @@
+Allgemeine Geschäftsbedingungen und Systemdokumentation
+Dies ist ein strukturierter Beispieltext zur Überprüfung von Schriftarten, Zeilenabständen und Umbrüchen.
+Er dient ausschließlich als Platzhalter für Design-Layouts und Software-Tests im deutschsprachigen Raum.
+Bitte ersetzen Sie diesen Abschnitt durch Ihre tatsächlichen Inhalte, sobald die finale Freigabe vorliegt.
+Hier beginnt der zweite Abschnitt des Testdokuments für die Qualitätssicherung.
+Wir prüfen die Lesbarkeit bei verschiedenen Schriftgrößen und responsiven Rastern auf Mobilgeräten.
+Besondere Zeichen wie Umlaute (ä, ö, ü) und das Eszett (ß) müssen korrekt dargestellt werden.
+Auch die Ausrichtung im Blocksatz oder linksbündigen Flattersatz wird hiermit evaluiert.
+Technische Spezifikationen und Schnittstellen
+Datenbank-Verbindung: Die Konfiguration erfolgt über die zentrale Konfigurationsdatei.
+Verschlüsselung: Alle Verbindungen müssen zwingend über TLS 1.3 abgesichert werden.
+Fehler-Protokoll: Systemfehler werden im lokalen Log-Verzeichnis im JSON-Format hinterlegt.
+Nachfolgend sehen Sie ein Beispiel für einen längeren Fließtext-Absatz ohne harte Umbrüche innerhalb der Zeilen. 
+Dies ist notwendig, um den automatischen Zeilenumbruch (Word-Wrap) von Texteditoren, Webbrowsern und PDF-Generatoren unter realistischen Bedingungen zu testen. Wenn der Text zu kurz ist, lassen sich Fehler im Layout-Raster oder unerwartete Überläufe in Containern nur schwer vorab erkennen. Daher wurde dieser Platzhalter bewusst großzügig dimensioniert und mit logischen Sinneinheiten gefüllt.
+Schlussbestimmungen und Haftungsausschluss
+Änderungen und Ergänzungen dieses Dokuments bedürfen zu ihrer Wirksamkeit der Schriftform.
+Sollten einzelne Bestimmungen unwirksam sein, bleibt die Gültigkeit der übrigen Abschnitte unberührt.
+Der Gerichtsstand für alle Streitigkeiten aus diesem Testlauf ist der jeweilige Entwicklungsstandort.
