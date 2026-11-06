@@ -1,4 +1,3 @@
-// === FIRST VERSION ===
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
@@ -7,10 +6,8 @@
 #  define BUFFER_SIZE 10
 # endif
 
-# include <stdlib.h>
-# include <stddef.h> // might also delete... check headers!!!
 # include <unistd.h>
-# include <stdio.h> // delete after!!!
+# include <stdlib.h>
 
 char	*get_next_line(int fd);
 size_t	ft_strlen(const char *s);
