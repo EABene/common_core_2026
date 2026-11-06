@@ -1,3 +1,14 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    ft_count_harvest_iterative.py                      :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: bsandler <bsandler@student.42vienna.c>     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/11/06 19:06:16 by bsandler          #+#    #+#              #
+#    Updated: 2026/11/06 19:06:33 by bsandler         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 def ft_count_harvest_iterative():
     max_days = int(input("Days until harvest: "))
