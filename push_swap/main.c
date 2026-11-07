@@ -1,6 +1,13 @@
 
 #include "push_swap.h"
 
+static void	print_sizes(t_stack *a, t_stack *b)
+{
+	printf("size stack a: %i\n", a->size);
+	printf("size stack b: %i\n", b->size);
+
+}
+
 int	main(int argc, char **argv)
 {
 	t_stack	a;
@@ -12,11 +19,9 @@ int	main(int argc, char **argv)
 		return (1);
 	fill_stack(&a, argv);
 	print_stacks(&a, &b);
-	sa(&a, &b);
+	selection_sort(&a, &b);
 	print_stacks(&a, &b);
-	sa(&a, &b);
-	print_stacks(&a, &b);
-
+	print_sizes(&a, &b);
 	free_stacks(&a, &b);
 	return (0);
 }

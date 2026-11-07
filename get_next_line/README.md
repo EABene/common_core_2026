@@ -27,7 +27,7 @@ A `static char *stash` holds text that was already read but not yet returned. Ea
 3. **`get_rest`**: keeps only what comes after the `\n` as the new stash and frees the old one.
 
 **Justification:**
-- `read` returns blocks, not lines. A block can already contain the start of the next line. These bytes cannot be read again, so they must survive until the next call. Global variables are forbidden, so a `static` variable is used.
+- `read` returns blocks, not lines. A block can already contain the start of the next line. These bytes cannot be read again, so they must survive until the next call, hence a `static` variable is used.
 - Reading only until the next `\n` follows the subject's rule to read as little as possible, and works for stdin and files of any size.
 - The returned line belongs to the caller; the stash belongs to `get_next_line`. Separate allocations keep this ownership clear, and on any error everything allocated is freed before returning `NULL`.
 - The read buffer is allocated with `malloc`, because a large `BUFFER_SIZE` on the stack would cause a stack overflow.
@@ -35,6 +35,7 @@ A `static char *stash` holds text that was already read but not yet returned. Ea
 ## Resources
 
 - `man 2 read`, `man 3 malloc`
-- [cppreference: Storage duration (static)](https://en.cppreference.com/w/c/language/storage_duration)
+- cppreference: Storage duration (static)
 
-**Usage of AI:** AI was used as a tutor to explain concepts (`read()`, `static` variables, memory ownership), to review my code and point out bugs and to generate test programs and test files. All project code was written by me.
+**Usage of AI:** AI was used as a tutor to explain concepts (`read()`, `static` variables, memory ownership), to review my code and point out bugs and to generate test programs. 
+All project code was written by me.
