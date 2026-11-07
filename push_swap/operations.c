@@ -1,3 +1,4 @@
+
 #include "push_swap.h"
 
 void	sa(t_stack *a, t_stack *b)
@@ -9,7 +10,7 @@ void	sa(t_stack *a, t_stack *b)
 	temp = a->data[0];
 	a->data[0] = a->data[1];
 	a->data[1] = temp;
-	puts("sa");
+	ft_puts("sa");
 }
 
 void	sb(t_stack *a, t_stack *b)
@@ -21,7 +22,7 @@ void	sb(t_stack *a, t_stack *b)
 	temp = b->data[0];
 	b->data[0] = b->data[1];
 	b->data[1] = temp;
-	puts("sb");
+	ft_puts("sb");
 }
 
 void	ss(t_stack *a, t_stack *b)
@@ -29,7 +30,7 @@ void	ss(t_stack *a, t_stack *b)
 // ss = sa and sb
 	sa(a, b);
 	sb(a, b);
-	puts("ss");
+	ft_puts("ss");
 }
 
 void	pa(t_stack *a, t_stack *b)
@@ -52,7 +53,7 @@ void	pa(t_stack *a, t_stack *b)
 	}
 	a->size++;
 	b->size--;
-	puts("pa");
+	ft_puts("pa");
 }
 
 void	pb(t_stack *a, t_stack *b)
@@ -75,7 +76,7 @@ void	pb(t_stack *a, t_stack *b)
 	}
 	b->size++;
 	a->size--;
-	puts("pb");
+	ft_puts("pb");
 }
 
 void	ra(t_stack *a, t_stack *b)
@@ -94,7 +95,7 @@ void	ra(t_stack *a, t_stack *b)
 		i++;
 	}
 	a->data[a->size - 1] = tmp;
-	puts("ra");
+	ft_puts("ra");
 }
 
 void	rb(t_stack *a, t_stack *b)
@@ -112,7 +113,7 @@ void	rb(t_stack *a, t_stack *b)
 		i++;
 	}
 	b->data[b->size - 1] = tmp;
-	puts("rb");
+	ft_puts("rb");
 }
 
 void	rr(t_stack *a, t_stack *b)
@@ -120,7 +121,7 @@ void	rr(t_stack *a, t_stack *b)
 // rr - ra & rb
 	ra(a, b);
 	rb(a, b);
-	puts("rr");
+	ft_puts("rr");
 }
 
 void	rra(t_stack *a, t_stack *b)
@@ -138,7 +139,7 @@ void	rra(t_stack *a, t_stack *b)
 		i--;
 	}
 	a->data[0] = tmp;
-	puts("rra");
+	ft_puts("rra");
 }
 
 void	rrb(t_stack *a, t_stack *b)
@@ -156,7 +157,7 @@ void	rrb(t_stack *a, t_stack *b)
 		i--;
 	}
 	b->data[0] = tmp;
-	puts("rrb");
+	ft_puts("rrb");
 }
 
 void	rrr(t_stack *a, t_stack *b)
@@ -164,6 +165,6 @@ void	rrr(t_stack *a, t_stack *b)
 // rrr - rra & rrb
 	rra(a, b);
 	rrb(a, b);
-	puts("rrr");
+	ft_puts("rrr");
 }
 

@@ -1,55 +1,63 @@
 
 #include "push_swap.h"
 
-int	init_stacks(t_stack *a, t_stack *b, int count)
+static void	print_sizes(t_stack *a, t_stack *b)
 {
-	a->data = ft_calloc(count, sizeof(int));
-	if (!a->data)
+	printf("size stack a: %i\n", a->size);
+	printf("size stack b: %i\n", b->size);
+
+}
+
+float compute_disorder(t_stack *a)
+{
+	float	mistakes;
+	float	total_pairs;
+	int	i;
+	int	j;
+
+	mistakes = 0;
+	total_pairs = 0;
+	for (i = 0; i < a->size; i++)
+	{
+		for (j = 0; j < a->size; j++)
+		{
+			total_pairs++;
+			if (a->data[i] > a->data[j])
+				mistakes++;
+		}
+	}
+	return (mistakes / total_pairs);
+}
+
+/*
+int	check_flags(char **argv)
+{
+	char	*simple = "--simple";
+	char	*medium = "--medium";
+	char	*complex = "--complex";
+	char	*adaptive = "--adaptive";
+	int		i = 0;
+
+	if (strncmp(simple, *argv[i], 9) == 0)
+		return (simple);
+}
+*/
+
+int	main(int argc, char **argv)
+{
+	t_stack	a;
+	t_stack	b;
+
+	if (argc <= 1)
 		return (0);
-	b->data = ft_calloc(count, sizeof(int));
-	if (!b->data)
-		return (free(a->data), 0);
-	a->size = 0;
-	b->size = 0;
-	return (1);
-}
-
-void fill_stack(t_stack *a, char **argv)
-{
-	int	i;
-
-	i = 1;
-	while (argv[i])
-	{
-		a->data[i - 1] = ft_atoi(argv[i]);
-		i++;
-	}
-	a->size = i - 1;
-}
-
-void free_stacks(t_stack *a, t_stack *b)
-{
-	free(a->data);
-	free(b->data);
-}
-
-void	print_stacks(t_stack *a, t_stack *b)
-{
-	int	i;
-
-	i = 0;
-	printf("Stack a: ");
-	while (i < a->size)
-	{
-		printf("%i ", a->data[i]);
-		i++;
-	}
-	i = 0;
-	printf("\nStack b: ");
-	while (i < b->size)
-	{
-		printf("%i ", b->data[i]);
-		i++;
-	}
-	printf("\n");
+	if (!init_stacks(&a, &b, argc -1))
+		return (1);
+	fill_stack(&a, argv);
+	print_stacks(&a, &b);
+	printf("Disorder: %f \n", compute_disorder(&a));
+	selection_sort(&a, &b);
+	print_stacks(&a, &b);
+	print_sizes(&a, &b);
+	free_stacks(&a, &b);
+	return (0);
 }

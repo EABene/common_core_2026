@@ -1,3 +1,4 @@
+
 #include "push_swap.h"
 
 int		find_lowest(t_stack *arr)
@@ -16,7 +17,7 @@ int		find_lowest(t_stack *arr)
 	return (lowest);
 }
 
-void	selection_sort(t_stack *a, t_stack *b)
+void	simple_sort(t_stack *a, t_stack *b) //selection sort
 {
 	int	lowest;
 
