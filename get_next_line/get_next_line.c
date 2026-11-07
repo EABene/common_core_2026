@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsandler <bsandler@student.42vienna.c      +#+  +:+       +#+        */
+/*   By: bsandler <bsandler@student.42vienna.c>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/06 16:34:00 by bsandler          #+#    #+#             */
 /*   Updated: 2026/11/06 16:35:56 by bsandler         ###   ########.fr       */
